@@ -1,0 +1,145 @@
+<script>
+  /*
+  //1
+  function mostrarLista(lista) {
+    try {
+      if (lista.length > 0) {
+        console.log(lista);
+      } else {
+        console.log("lista vacia");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  const listaPrueba = ["moni", "cumbi"];
+  mostrarLista(listaPrueba);
+  mostrarLista([]);
+  mostrarLista();
+  //2
+  (function (lista) {
+    try {
+      if (lista.length > 0) {
+        console.log(lista);
+      } else {
+        console.log("lista vacia");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  })(["chin", "merli", "camilo"]);
+*/
+  /*
+class Alumno{
+    constructor(nombre, edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    getAlumno(){
+        console.log("Nombre: ", this.nombre, " Edad: ", this.edad);
+    }
+}
+
+let ana = new Alumno("Ana", 21);
+console.log(ana);
+*/
+  // class Contador{
+  //     static cuentaGlobal = 0
+
+  //     constructor(nombre){
+  //         this.nombre = nombre
+  //         this.cuentaIndividual = 0
+  //     }
+
+  //     obtenerResponsable(){
+  //         return this.nombre
+  //     }
+
+  //     obtenerCuentaIndividual(){
+  //         return this.cuentaIndividual
+  //     }
+
+  //     obtenerCuentaGlobal(){
+  //         return Contador.cuentaGlobal
+  //     }
+
+  //     contar(){
+  //         this.cuentaIndividual++
+  //         Contador.cuentaGlobal++
+  //     }
+  // }
+
+  // const c1 = new Contador("Lucas")
+  // console.log(c1.obtenerResponsable)
+  // console.log(c1.obtenerCuentaIndividual)
+  // console.log(c1.obtenerCuentaGlobal)
+  // c1.contar()
+
+  // Consigna:
+  // - Realizar una lista nueva  (array) que contenga todos los tipos de productos (no cantidades), consejo: utilizar Object.keys y Array.includes. Mostrar el array por consola.
+  // - Posteriormente, obtener el total de productos vendidos por todos los objetos (utilizar Object.values)
+  // const objetos = [
+  //   {
+  //     manzanas: 3,
+  //     peras: 2,
+  //     carne: 1,
+  //     jugos: 5,
+  //     dulces: 2,
+  //   },
+  //   {
+  //     manzanas: 1,
+  //     sandias: 1,
+  //     huevos: 6,
+  //     jugos: 1,
+  //     panes: 2,
+  //   },
+  // ];
+
+  // const tiposProductos = [];
+  // objetos.forEach((objeto) => {
+  //   Object.keys(objeto).forEach((producto) => {
+  //     if (!tiposProductos.includes(producto)) {
+  //       tiposProductos.push(producto);
+  //     }
+  //   });
+  // });
+
+  // console.log(tiposProductos);
+
+  // const totalProductosVendidos = Object.values(
+  //   objetos.reduce((acc, obj) => {
+  //     for (const producto in obj) {
+  //       if (acc[producto]) {
+  //         acc[producto] += obj[producto];
+  //       } else {
+  //         acc[producto] = obj[producto];
+  //       }
+  //     }
+  //     return acc;
+  //   }, {})
+  // );
+
+  // console.log(totalProductosVendidos);
+
+//   Definiremos una función llamada operación que reciba como parámetro dos valores y una función con la operación que va a realizar. Deberá retornar el resultado.
+
+// Definiremos las siguientes funciones: suma, resta, multiplicación, división y módulo. Estas recibirán dos valores y devolverán el resultado. Serán pasadas como parámetro en la llamada a la función operación
+
+// Todas las funciones tendrán que ser realizadas con sintaxis flecha.
+
+operacion = (valor1, valor2, funcionOperacion) => {
+    return funcionOperacion(valor1, valor2)
+}
+
+suma = (n1, n2) => n1+n2
+
+resta = (n1, n2) => n1-n2
+
+multiplicacion = (n1, n2) => n1*n2
+
+division = (n1, n2) =>  n1/n2
+
+modulo = (n1,n2) => n1%n2
+</script>
