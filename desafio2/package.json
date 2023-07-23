@@ -1,5 +1,5 @@
 {
-  "name": "desafio1",
+  "name": "desafio2",
   "version": "1.0.0",
   "description": "",
   "main": "ProductManager.js",
@@ -9,7 +9,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-  
 }
-
-

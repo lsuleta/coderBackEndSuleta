@@ -1,17 +1,18 @@
 class ProductManager {
-  #Id;
   constructor() {
     this.products = [];
-    this.#Id = 1;
+    this.id = 1;
   }
 
-  addProduct(title, description, price, thumbnail, code, stock) {
+  addProduct(product) {
+    const { title, description, price, thumbnail, code, stock } = product;
+
     const existingProduct = this.products.find(
       (product) => product.code === code
     );
 
     const newProduct = {
-      id: this.#Id,
+      id: this.id,
       title,
       description,
       price,
@@ -20,10 +21,10 @@ class ProductManager {
       stock,
     };
 
-    this.#Id++;
+    this.id++;
 
     if (existingProduct) {
-      console.log("Codigo en uso");
+      throw new Error("codigo en uso");
     } else {
       this.products.push(newProduct);
       return newProduct;
@@ -31,45 +32,51 @@ class ProductManager {
   }
 
   getProducts() {
-    return console.log(this.products);
+    return this.products;
   }
 
   getProductById(id) {
     const product = this.products.find((product) => product.id === id);
     if (!product) {
-      console.log("Not found");
+      throw new Error("not found");
     } else {
-      return console.log(product);
+      return product;
     }
   }
 }
 
 const pm = new ProductManager();
-console.log("primer get products")
-pm.getProducts();
-console.log("primera intento de add")
-pm.addProduct(
-  "producto prueba",
-  "Este es un producto prueba",
-  200,
-  "Sin imagen",
-  "abc123",
-  25
-);
-console.log("segundo get products")
-pm.getProducts();
-console.log("segundo intento de add")
-pm.addProduct(
-  "producto prueba",
-  "Este es un producto prueba",
-  200,
-  "Sin imagen",
-  "abc123",
-  25
-);
-console.log("verificamos que no agrege el duplicado")
-pm.getProducts();
-console.log("primera busqueda por id")
-pm.getProductById(1);
-console.log("segunda busqueda por id")
-pm.getProductById(3);
+console.log("primer get products");
+console.log(pm.getProducts());
+console.log("primera intento de add");
+const newProduct = {
+  id: this.id,
+  title: "producto prueba",
+  description: "Este es un producto prueba",
+  price: 200,
+  thumbnail: "Sin imagen",
+  code: "abc123",
+  stock: 25,
+};
+
+const newProduct2 = {
+  id: this.id,
+  title: "producto prueba",
+  description: "Este es un producto prueba",
+  price: 200,
+  thumbnail: "Sin imagen",
+  code: "abc123",
+  stock: 25,
+};
+
+pm.addProduct(newProduct);
+console.log("segundo get products");
+console.log(pm.getProducts());
+console.log("segundo intento de add");
+pm.addProduct(newProduct2);
+console.log("verificamos que no agrege el duplicado");
+console.log(pm.getProducts());
+console.log("primera busqueda por id");
+console.log(pm.getProductById(1));
+console.log("segunda busqueda por id");
+console.log(pm.getProductById(3));
