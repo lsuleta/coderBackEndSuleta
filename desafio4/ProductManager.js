@@ -1,4 +1,4 @@
-import { error } from "console";
+
 import fs from "fs";
 
 class ProductManager {
@@ -8,7 +8,7 @@ class ProductManager {
     }
 
     addProduct = async (product) => {
-        const { title, description, price, thumbnail, code, stock } = product;
+        const { title, description, price, thumbnail, code, stock, category } = product;
 
         const existingProduct = (await this.getProducts()).find(
             (product) => product.code === code
@@ -25,6 +25,8 @@ class ProductManager {
             thumbnail,
             code,
             stock,
+            category,
+            status: true,
         };
 
         this.id++;
@@ -130,8 +132,8 @@ class ProductManager {
 
 export default ProductManager;
 
-const filePath = "./productos.json";
-const productManager = new ProductManager(filePath);
+// const filePath = "./productos.json";
+// const productManager = new ProductManager(filePath);
 
 // productManager
 //     .deleteProduct(9)
